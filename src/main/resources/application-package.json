@@ -51,7 +51,7 @@
     {
       "unit": {
         "type": "docker",
-        "image": "mohammedsaad/service:latest"
+        "image": "matthesrieke/string-replace:latest"
       }
     }
   ],
