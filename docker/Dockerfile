@@ -1,4 +1,10 @@
-FROM openjdk:8
-VOLUME /data
-ADD ./StringReplace-0.0.1-SNAPSHOT.jar myapp.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/myapp.jar"]
+FROM alpine
+
+RUN apk add --update bash && rm -rf /var/cache/apk/*
+
+ENV INPUT_SOURCE= \ 
+    OUTPUT_OUTPUT=
+
+COPY process.bash /
+
+CMD [ "/process.bash" ]
